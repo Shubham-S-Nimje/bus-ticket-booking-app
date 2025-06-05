@@ -1,0 +1,101 @@
+<section>
+  <div class="container mx-auto">
+    <h1 class="text-center text-2xl md:text-4xl font-bold my-8">
+      Bus Booking System
+    </h1>
+    <div class="bg-rose-500 p-4 rounded-lg md:rounded-full w-fit mx-auto mb-8">
+      <form
+        (ngSubmit)="searchBus()"
+        class="flex flex-col md:flex-row justify-center items-center gap-4"
+      >
+        <!-- <input
+          class="bg-white py-2 px-4 rounded-lg md:rounded-l-full"
+          type="text"
+          placeholder="place"
+        /> -->
+
+        <select
+          name="from"
+          id="from"
+          [(ngModel)]="searchData.from"
+          class="bg-white py-2 px-4 rounded-lg md:rounded-l-full"
+        >
+          <option value="nagpur">Nagpur</option>
+          <option value="pune">Pune</option>
+          <option value="solapur">Solapur</option>
+          <option value="mumbai">Mumbai</option>
+        </select>
+        <!-- <input
+          class="bg-white py-2 px-4 rounded-lg md:rounded-none"
+          type="text"
+          placeholder="place"
+        /> -->
+
+        <select
+          name="to"
+          id="to"
+          [(ngModel)]="searchData.to"
+          class="bg-white py-2 px-4 rounded-lg md:rounded-none"
+        >
+          <option value="nagpur">Nagpur</option>
+          <option value="pune">Pune</option>
+          <option value="solapur">Solapur</option>
+          <option value="mumbai">Mumbai</option>
+        </select>
+        <input
+          class="bg-white py-2 px-4 rounded-lg md:rounded-r-full"
+          type="date"
+          [(ngModel)]="searchData.date"
+          placeholder="place"
+        />
+        <button type="submit" class="bg-white py-2 px-4 rounded-full">
+          SEARCH BUSES
+        </button>
+      </form>
+    </div>
+    <div class="m-4">
+      <h2 class="text-xl md:text-3xl font-semibold my-4">Available Buses</h2>
+      <div
+        class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-7 items-center gap-4 border bg-rose-50 border-rose-300 shadow p-4 rounded-lg"
+      >
+        <div>
+          <p class="font-semibold">IntrCity SmartBus</p>
+          <p>A/C Sleeper (2+1)</p>
+        </div>
+        <div>
+          <p class="font-semibold">19:00</p>
+          <p>Departure</p>
+        </div>
+        <div>
+          <p class="font-semibold">13h 55m</p>
+          <p>Duration</p>
+        </div>
+        <div>
+          <p class="font-semibold">08:55</p>
+          <p>Arrival <span class="text-rose-500">18-Aug</span></p>
+        </div>
+        <div>
+          <p class="font-semibold">4.5 ⭐</p>
+          <p>567 Ratings</p>
+        </div>
+        <div>
+          <p class="font-semibold">INR 935</p>
+          <p>8 Seats available</p>
+        </div>
+        <div>
+          <button class="bg-rose-500 px-4 py-4 rounded-lg text-white font-bold">
+            VIEW SEATS
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- testing -->
+    <button
+      (click)="onClick()"
+      class="bg-rose-100 border border-rose-300 px-2 py-1 rounded-lg"
+    >
+      MODE
+    </button>
+    <p [hidden]="isDisplay">{{ searchData.from }}</p>
+  </div>
+</section>
