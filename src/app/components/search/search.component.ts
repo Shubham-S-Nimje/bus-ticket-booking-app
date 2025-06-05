@@ -16,15 +16,6 @@ export class SearchComponent {
     to: 'pune',
     date: new Date().toLocaleDateString(),
   };
-  isDisplay: boolean = false;
-
-  onClick() {
-    if (this.isDisplay) {
-      this.isDisplay = false;
-    } else {
-      this.isDisplay = true;
-    }
-  }
 
   ngOnInit(): void {
     this.getAllLocations();
